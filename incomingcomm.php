@@ -13,6 +13,8 @@
     <!-- Title Page-->
     <title>LIS | DASHBOARD</title>
 
+    <!-- Data Tables-->
+  <link href="assets/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -30,14 +32,12 @@
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-    <link href="vendor/vector-map/jqvmap.min.css" rel="stylesheet" media="all">
-
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
 
 </head>
 
-<body ng-app="dashboard" ng-controller="dashboardCtrl" account-profile>
+<body ng-app="incoming" ng-controller="incomingCtrl" account-profile>
     <div class="page-wrapper">
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar2">
@@ -64,8 +64,8 @@
                                 </span>
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="incomingcomm.php">
+                                <li class= "active">
+                                    <a href="javascript:;">
                                         <i class="fas fa-tachometer-alt"></i>Incoming Communications</a>
                                 </li>
                                 <li>
@@ -143,14 +143,9 @@
                                 </span>
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="sp_profile.php">
-                                        <i class="fab fa-flickr"></i>Users</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fas fa-comment-alt"></i>Groups</a>
-                                </li>
+
+                                <li class="active"><a href="sp_profile.php"><i class="fab fa-flickr"></i>Users</a></li>
+                                <li><a href="javascript:;"><i class="fas fa-comment-alt"></i>Groups</a> </li>
                                 <li>
                                     <a href="javascript:;">
                                         <i class="far fa-window-maximize"></i>Origin</a>
@@ -410,46 +405,24 @@
             </aside>
             <!-- END HEADER DESKTOP-->
 
-            <!-- BREADCRUMB-->
-            <section class="au-breadcrumb m-t-75">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="au-breadcrumb-content">
-                                    <div class="au-breadcrumb-left">
-                                        <span class="au-breadcrumb-span">You are here:</span>
-                                        <ul class="list-unstyled list-inline au-breadcrumb__list">
-                                            <li class="list-inline-item active">
-                                                <a href="#">Home</a>
-                                            </li>
-                                            <li class="list-inline-item seprate">
-                                                <span>/</span>
-                                            </li>
-                                            <li class="list-inline-item">Dashboard</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END BREADCRUMB-->
-
-        
-
             <section>
-                <div class="section__content section__content--p30">
+                <div class="section__content section__content--p30 m-t-20" style="
+    top: 75px;
+">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-xl-10">
+                            <div class="mx-auto w-100 col-xl-14">
+
+
                                 <!-- USER DATA-->
-                                <div class="user-data m-b-40">
-                                    <h3 class="title-3 m-b-30">
-                                        <i class="zmdi zmdi-account-calendar"></i>User</h3>
-                                   sadfghj
+                                <div class="user-data m-b-100">
+                                  <div class="x_content" id= "x_content">
+
+
+                                  </div>
                                 </div>
+
+
                                 <!-- END USER DATA-->
                             </div>
                         </div>
@@ -480,9 +453,9 @@
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script> -->
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
+     <!--Vendor JS       -->
     <script src="vendor/slick/slick.min.js">
     </script>
     <script src="vendor/wow/wow.min.js"></script>
@@ -501,8 +474,33 @@
     <script src="vendor/vector-map/jquery.vmap.min.js"></script>
     <script src="vendor/vector-map/jquery.vmap.sampledata.js"></script>
     <script src="vendor/vector-map/jquery.vmap.world.js"></script>
+    
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
+
+
+    <script src="assets/js/detect.js"></script>
+    <script src="assets/js/fastclick.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/jquery.blockUI.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+    <script src="assets/plugins/datatables/datatables.js"></script>
+    <script src="assets/plugins/datatables/datatables.min.js"></script>
+
 
     <!-- Main JS-->
+    <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
+    <script src="assets/plugins/raphael/raphael-min.js"></script>
+    <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+    <script src="assets/js/jquery.core.js"></script>
+    <script src="assets/js/jquery.app.js"></script>
+    <script src="assets/js/bootbox.min.js"></script>
+    <script src="modules/growl/jquery.bootstrap-growl.js"></script>
     <script src="js/main.js"></script>
 
   
@@ -516,7 +514,8 @@
     
 
     <script src="modules/account.js"></script>
-    <script src="controllers/dashboard.js"></script>
+    <script src="modules/incomingcomm.js"></script>
+    <script src="controllers/incomingcomm.js"></script>
 
 </body>
 

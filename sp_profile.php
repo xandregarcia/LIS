@@ -37,12 +37,26 @@
 
 </head>
 
-<body ng-app="sp_prof" ng-controller="sp_profCtrl" account-profile>
+<body ng-app="sp_profile" ng-controller="sp_profCtrl" account-profile>
     <div class="page-wrapper">
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar2">
             <div class="logo">
-                <a href="#">
+                <a href="index.php">
+                    <img src="images/icon/logo-white.png" alt="Cool Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar2__content js-scrollbar1">
+                <div class="account2">
+                    <div class="image img-cir img-120">
+                        <img src="{{accountProfile.picture}}"/>
+                    </div>
+                    <h4 class="name">{{accountProfile.fullname}}</h4>
+                    <a href="javascript:;" logout-account>Sign out</a>
+                </div>
+                <aside class="menu-sidebar2">
+            <div class="logo">
+                <a href="index.php">
                     <img src="images/icon/logo-white.png" alt="Cool Admin" />
                 </a>
             </div>
@@ -65,27 +79,48 @@
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="javascript:;">
+                                    <a href="incomingcomm.php">
                                         <i class="fas fa-tachometer-alt"></i>Incoming Communications</a>
                                 </li>
+
+                                 <li>
+                                    <a href="javascript:;">
+                                        <i class="fas fa-tachometer-alt"></i>List Communications</a>
+                                </li>
+
                                 <li>
                                     <a href="javascript:;">
                                         <i class="fas fa-tachometer-alt"></i>Add Communication</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">
-                                        <i class="fas fa-tachometer-alt"></i>Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fas fa-tachometer-alt"></i>Dashboard 4</a>
+                                        <i class="fas fa-tachometer-alt"></i>View Archived Communication</a>
                                 </li>
                             </ul>
                         </li>
                       
+                        <li class="has-sub">
+                            <a class = "js-arrow" href="#">
+                                <i class="fa fa-mail-forward"></i>Referrals</a>
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="#">
-                                <i class="fas fa-shopping-basket"></i>eCommerce</a>
+                            <a href="javascript:;">
+                                <i class="fas fa-table"></i>List Referrals</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="far fa-check-square"></i>Communication for Referrals</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fas fa-calendar-alt"></i>View Archived Referrals</a>
+                        </li>
+                        </ul>
+
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
@@ -144,7 +179,7 @@
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
 
-                                <li class="active"><a href="userprofile.php"><i class="fab fa-flickr"></i>Users</a></li>
+                                <li class="active"><a href="sp_profile.php"><i class="fab fa-flickr"></i>Users</a></li>
                                 <li><a href="javascript:;"><i class="fas fa-comment-alt"></i>Groups</a> </li>
                                 <li>
                                     <a href="javascript:;">
@@ -500,6 +535,7 @@
     <script src="assets/js/jquery.core.js"></script>
     <script src="assets/js/jquery.app.js"></script>
     <script src="assets/js/bootbox.min.js"></script>
+    <script src="modules/growl/jquery.bootstrap-growl.js"></script>
     <script src="js/main.js"></script>
 
   

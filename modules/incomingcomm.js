@@ -21,27 +21,27 @@ function form(){
 			}
 		};
 			
-		scope.sp_profile = {};
-		scope.sp_profile.id = 0;
+		scope.incomingcomm = {};
+		scope.incomingcomm.id = 0;
 
-		scope.sp_profiles = []; // list
+		scope.incomingcomms = []; // list
 
 	};
 
-	function groups(scope){
+	// function groups(scope){
 
-	 	$http({
+	// 	$http({
 
-	 		url: "api/suggestions/groups.php",
-	 		method: "POST"
-	 	}).then(function success(res){
+	// 		url: "api/suggestions/groups.php",
+	// 		method: "POST"
+	// 	}).then(function success(res){
 
-	 		scope.groups = res.data;
-	 	}, function error(res){
+	// 		scope.groups = res.data;
+	// 	}, function error(res){
 
 	// 		//error
-		});
-	 }
+	// 	});
+	// }
 
 	// function departments(scope){
 
@@ -62,15 +62,15 @@ function form(){
 			
 		bui.show();
 		
-		scope.sp_profile = {};
-		scope.sp_profile.id = 0;
+		scope.incomingcomm = {};
+		scope.incomingcomm.id = 0;
 		
 		$http({
 		  method: 'POST',
-		  url: 'handlers/sp_profile/list.php',
+		  url: 'handlers/incomingcomm/list.php',
 		}).then(function mySucces(response) {
 			
-			scope.sp_profiles = response.data;
+			scope.incomingcomms = response.data;
 			
 			bui.hide();
 			
@@ -80,11 +80,11 @@ function form(){
 			
 		});
 		
-		$('#x_content').load('lists/sp_profile.html', function() {
+		$('#x_content').load('lists/incomingcomm.html', function() {
 			$timeout(function() { $compile($('#x_content')[0])(scope); },100);								
 			// instantiate datable
 			$timeout(function() {
-				$('#sp_profile').DataTable({
+				$('#incomingcomm').DataTable({
                     // "ordering": true,
                     // "paging":true
                     
@@ -97,7 +97,7 @@ function form(){
 	
 	function validate(scope) {
 									// change
-		var controls = scope.formHolder.sp_profile.$$controls;
+		var controls = scope.formHolder.incomingcomm.$$controls;
 		
 		angular.forEach(controls,function(elem,i) {
 			
@@ -105,7 +105,7 @@ function form(){
 								
 		});
 							 // change
-		return scope.formHolder.sp_profile.$invalid;
+		return scope.formHolder.incomingcomm.$invalid;
 		
 	};
 	
@@ -127,13 +127,13 @@ function form(){
 	
 	self.addEdit = function(scope,row) {	
 		
-		scope.sp_profile = {};
-		scope.sp_profile.id = 0;
+		scope.incomingcomm = {};
+		scope.incomingcomm.id = 0;
 		
 		mode(scope,row);
 		
 		$('#x_content').html(loading);
-		$('#x_content').load('forms/sp_profile.html',function() {
+		$('#x_content').load('forms/incomingcomm.html',function() {
 			$timeout(function() { $compile($('#x_content')[0])(scope); },200);
 		});
 		
@@ -142,11 +142,11 @@ function form(){
 			if (scope.$id > 2) scope = scope.$parent;				
 			$http({
 			  method: 'POST',
-			  url: 'handlers/sp_profile/view.php',
+			  url: 'handlers/incomingcomm/view.php',
 			  data: {id: row.id}
 			}).then(function mySucces(response) {
 				
-				angular.copy(response.data, scope.sp_profile);
+				angular.copy(response.data, scope.incomingcomm);
 				
 			}, function myError(response) {
 				 
@@ -154,7 +154,7 @@ function form(){
 				
 			});					
 		};
-		 groups(scope);
+		// groups(scope);
 		// departments(scope);
 	
 	};
@@ -174,17 +174,17 @@ function form(){
 		
 		$http({
 			method: 'POST',
-			url: 'handlers/sp_profile/save.php',
-			data: {sp_profile: scope.sp_profile}
+			url: 'handlers/incomingcomm/save.php',
+			data: {incomingcomm: scope.incomingcomm}
 		}).then(function mySucces(response) {
 			
-			if (scope.sp_profile.id == 0) {
-				scope.sp_profile.id = response.data;
+			if (scope.incomingcomm.id == 0) {
+				scope.incomingcomm.id = response.data;
 				growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully added.');
 				}	else{
 					growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully updated.');
 				}
-			mode(scope,scope.sp_profile);
+			mode(scope,scope.incomingcomm);
 			
 		}, function myError(response) {
 			 
@@ -202,7 +202,7 @@ function form(){
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/sp_profile/delete.php',
+			  url: 'handlers/incomingcomm/delete.php',
 			  data: {id: [row.id]}
 			}).then(function mySucces(response) {
 

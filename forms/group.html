@@ -1,0 +1,94 @@
+<style type="text/css"> .switch {   position: relative;   display: inline-block;   width: 53px;   height: 25px; }  .switch input {display:none;}  .slider {   position: absolute;   cursor: pointer;   top: 0;   left: 0;   right: 0;   bottom: 0;   background-color: #c7c7c7;   -webkit-transition: .4s;   transition: .4s; }  .slider:before {   position: absolute;   content: "";   height: 20px;   width: 20px;   left: 4px;   bottom: 2px;   background-color: white;   -webkit-transition: .4s;   transition: .4s; }  input:checked + .slider {   background-color: #169F85; }  input:disabled + .slider {   background-color: #b1afaf; }  input:focus + .slider {   box-shadow: 0 0 1px #169F85; }  input:checked + .slider:before {   -webkit-transform: translateX(26px);   -ms-transform: translateX(26px);   transform: translateX(26px); }  /* Rounded sliders */ .slider.round {   border-radius: 34px; }  .slider.round:before {   border-radius: 50%; } </style>
+  
+  <!-- BREADCRUMB-->
+  <section class="au-breadcrumb m-t-25">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-14">
+                    <div class="au-breadcrumb-content">
+                        <div class="au-breadcrumb-left">
+                            <span class="au-breadcrumb-span">You are here:</span>
+                            <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                <li class="list-inline-item active">
+                                    <a href="index.php">Maintenance</a>
+                                </li>
+                                <li class="list-inline-item seprate">
+                                    <span>/</span>
+                                </li>
+                                <li class="list-inline-item">Group</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- END BREADCRUMB-->
+<div class="panel panel-border panel-primary">
+    <div class="card">
+        <div class="card-header">
+		<h4><i class="fa fa-th-list m-l-5"></i> <strong> &nbsp; Add User</strong> 
+		<button type="submit" class="btn btn-primary float-right m-r-10" ng-click="form.edit(this)"><i class="fa" ng-class="{'fa-edit': controls.ok.btn, 'fa-ban': !controls.ok.btn}"></i></button>
+        </h4>
+    </div>
+
+    </div >
+    <div class="card-body card-block">
+
+        <div class="col-md-14 m-t-5 m-l-10">
+
+			<form name="formHolder.group" id="formHolder.group" novalidate autocomplete="off">
+	            <div>
+					<div class="form-group" ng-class="{'has-error': formHolder.group.group_name.$touched && formHolder.group.group_name.$invalid}">
+						 <div class="col-md-4">
+							<label>Group Name:</label>
+							<input type="text" class="form-control" name="group_name" ng-model="group.group_name" ng-disabled="controls.ok.btn" required>
+							<span class="help-block" ng-show="formHolder.group.group_name.$touched && formHolder.group.group_name.$invalid">This field is required</span>
+						</div>
+					</div>
+					<div class="form-group" ng-class="{'has-error': formHolder.group.group_description.$touched && formHolder.group.group_description.$invalid}">
+						 <div class="col-md-4">
+							<label>Description</label>
+							<input type="text" class="form-control" name="group_description" ng-model="group.group_description" ng-disabled="controls.ok.btn">
+	                        <span class="help-block" ng-show="formHolder.group.group_description.$touched && formHolder.group.group_description.$invalid">This field is required</span>
+	                    </div>
+	                </div>
+	            </div>
+	
+	            <div class="col-md-12">
+					<div class="panel" ng-repeat="p in privileges">
+					<br><br>
+						<div class="x_title">
+							<hr>
+							<label><i class="ti-pencil-alt"></i> {{p.description}}</label>
+							<ul class="nav navbar-right panel_toolbox">
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+						
+						<div class="row">		
+							<div class="col-md-3 form-group" ng-repeat="pp in p.privileges">
+								<label class="switch">
+								  <input type="checkbox" class="flat" ng-checked="pp.value" ng-model="pp.value" ng-disabled="controls.ok.btn">
+								  <span class="slider round"></span>
+								</label>
+								<h6>{{pp.description}}</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+    
+    </div>
+</div>
+	<div class="card-footer col-md-12">
+		<button type="submit" class="btn btn-primary" ng-click="form.save(this)" ng-disabled="controls.ok.btn">{{controls.ok.label}}</button>
+		<button type="submit" class="btn btn-primary" ng-click="form.list(this)" style="margin-right: 5px;">{{controls.cancel.label}}</button>
+	</div>
+	
+</div>

@@ -1,4 +1,4 @@
-angular.module('app-module',['bootstrap-growl','bootstrap-modal','form-validator','block-ui']).factory('form', function($http,$compile,$timeout,growl,bootstrapModal,validate,bui){
+angular.module('group-module',['bootstrap-growl','bootstrap-modal','form-validator','block-ui']).factory('form', function($http,$compile,$timeout,growl,bootstrapModal,validate,bui){
 
 function form(){
 
@@ -21,56 +21,45 @@ function form(){
 			}
 		};
 			
-		scope.sp_profile = {};
-		scope.sp_profile.id = 0;
+		scope.group = {};
+		scope.group.group_id = 0;
 
-		scope.sp_profiles = []; // list
+		scope.groups = []; // list
+		
 
 	};
 
-	function groups(scope){
-
-	 	$http({
-
-	 		url: "api/suggestions/groups.php",
-	 		method: "POST"
-	 	}).then(function success(res){
-
-	 		scope.groups = res.data;
-	 	}, function error(res){
-
-	// 		//error
-		});
-	 }
-
-	// function departments(scope){
-
-	// 	$http({
-
-	// 		url: "api/suggestions/departments.php",
-	// 		method: "POST"
-	// 	}).then(function success(res){
-
-	// 		scope.departments = res.data;
-	// 	}, function error(res){
-
-	// 		//error
-	// 	});
-	// }
+	function privileges(scope) {
+		
+		$http({
+		  method: 'POST',
+		  url: 'handlers/privileges.php',
+		  data: {group_id: scope.group.group_id}
+		}).then(function mySuccess(response) {
+			
+			scope.privileges = angular.copy(response.data);
+			
+		}, function myError(response) {
+			
+			//
+			
+		});				
+		
+	};	
 	
 	self.list = function(scope) {
 			
 		bui.show();
 		
-		scope.sp_profile = {};
-		scope.sp_profile.id = 0;
+		scope.group = {};
+		scope.group.group_id = 0;
 		
 		$http({
 		  method: 'POST',
-		  url: 'handlers/sp_profile/list.php',
+		  url: 'handlers/group/list.php',
 		}).then(function mySucces(response) {
 			
-			scope.sp_profiles = response.data;
+			scope.groups = response.data;
 			
 			bui.hide();
 			
@@ -80,14 +69,12 @@ function form(){
 			
 		});
 		
-		$('#x_content').load('lists/sp_profile.html', function() {
+		$('#x_content').load('lists/groups.html', function() {
 			$timeout(function() { $compile($('#x_content')[0])(scope); },100);								
 			// instantiate datable
 			$timeout(function() {
-				$('#sp_profile').DataTable({
-                    // "ordering": true,
-                    // "paging":true
-                    
+				$('#group').DataTable({
+					"ordering": true
 				});	
 			},200);
 			
@@ -97,7 +84,7 @@ function form(){
 	
 	function validate(scope) {
 									// change
-		var controls = scope.formHolder.sp_profile.$$controls;
+		var controls = scope.formHolder.group.$$controls;
 		
 		angular.forEach(controls,function(elem,i) {
 			
@@ -105,7 +92,7 @@ function form(){
 								
 		});
 							 // change
-		return scope.formHolder.sp_profile.$invalid;
+		return scope.formHolder.group.$invalid;
 		
 	};
 	
@@ -127,13 +114,17 @@ function form(){
 	
 	self.addEdit = function(scope,row) {	
 		
-		scope.sp_profile = {};
-		scope.sp_profile.id = 0;
+		scope.group = {};
+		scope.group.group_id = 0;
 		
 		mode(scope,row);
 		
+		console.log(scope);
+		
+		privileges(scope);
+		
 		$('#x_content').html(loading);
-		$('#x_content').load('forms/sp_profile.html',function() {
+		$('#x_content').load('forms/group.html',function() {
 			$timeout(function() { $compile($('#x_content')[0])(scope); },200);
 		});
 		
@@ -142,11 +133,12 @@ function form(){
 			if (scope.$id > 2) scope = scope.$parent;				
 			$http({
 			  method: 'POST',
-			  url: 'handlers/sp_profile/view.php',
-			  data: {id: row.id}
+			  url: 'handlers/group/view.php',
+			  data: {group_id: row.group_id}
 			}).then(function mySucces(response) {
 				
-				angular.copy(response.data, scope.sp_profile);
+				angular.copy(response.data, scope.group);
+				privileges(scope);
 				
 			}, function myError(response) {
 				 
@@ -154,8 +146,6 @@ function form(){
 				
 			});					
 		};
-		 groups(scope);
-		// departments(scope);
 	
 	};
 	
@@ -168,23 +158,23 @@ function form(){
 	self.save = function(scope) {
 		
 		if (validate(scope)){ 
-		growl.show('btn btn-danger',{from: 'top', amount: 55},' Please complete required fields.');
+		growl.show('alert alert-danger alert-dismissible fade in',{from: 'top', amount: 55},' Please complete required fields.');
 		return;
 		}
 		
 		$http({
-			method: 'POST',
-			url: 'handlers/sp_profile/save.php',
-			data: {sp_profile: scope.sp_profile}
+		  method: 'POST',
+		  url: 'handlers/group/save.php',
+		data: {group: scope.group, privileges: scope.privileges}
 		}).then(function mySucces(response) {
 			
-			if (scope.sp_profile.id == 0) {
-				scope.sp_profile.id = response.data;
-				growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully added.');
+			if (scope.group.group_id == 0) {
+				scope.group.group_id = response.data;
+				growl.show('btn btn-success',{from: 'top', amount: 55},' Information successfully added.');
 				}	else{
-					growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully updated.');
+					growl.show('btn btn-success',{from: 'top', amount: 55},' Information successfully updated.');
 				}
-			mode(scope,scope.sp_profile);
+			mode(scope,scope.group);
 			
 		}, function myError(response) {
 			 
@@ -202,13 +192,13 @@ function form(){
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/sp_profile/delete.php',
-			  data: {id: [row.id]}
+			  url: 'handlers/group/delete.php',
+			  data: {group_id: [row.group_id]}
 			}).then(function mySucces(response) {
 
 				self.list(scope);
 				
-				growl.show('btn btn-danger',{from: 'top', amount: 55},'Brand Information successfully deleted.');
+				growl.show('btn btn-danger',{from: 'top', amount: 55},' Information successfully deleted.');
 				
 			}, function myError(response) {
 				 
@@ -227,4 +217,4 @@ function form(){
 
 return new form();
 
-});
+}); 

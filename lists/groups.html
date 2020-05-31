@@ -1,0 +1,70 @@
+
+<!-- BREADCRUMB-->
+ <section class="au-breadcrumb m-t-50">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="au-breadcrumb-content">
+                        <div class="au-breadcrumb-left">
+                            <span class="au-breadcrumb-span col-m-3">You are here:</span>
+                            <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                <li class="list-inline-item active">
+                                    <a href="#">Home</a>
+                                </li>
+                                <li class="list-inline-item seprate">
+                                    <span>/</span>
+                                </li>
+                                <li class="list-inline-item">Groups</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- END BREADCRUMB-->
+
+<div class="panel panel-border panel-primary m-t-20">
+    
+	<div class="panel-heading">
+        <div class="clearfix">
+		    <h4> <i class="zmdi zmdi-account-calendar m-3"></i> User Data
+		    <button class="btn btn-primary float-right m-3" ng-click="form.addEdit(this)">Add</button>
+            </h4>
+        </div>
+	</div>
+    <hr>
+    
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-12">
+                <div class="table-responsive table--no-card m-b-30"> 
+                    
+				<table id="group" class="table table-borderless table-striped table-earning">
+                    <tr>
+                        <thead>
+                            <th>No.</th>
+                            <th>Group Name</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="data in groups">
+                                <td>{{$index+1}}</td>
+                                <td>{{data.group_name}}</td>
+                                <td>{{data.group_description}}</td>
+                                <td>
+                                <button class="btn btn-success" ng-click="form.addEdit(this,data)">Edit</button>
+                                <button class="btn btn-danger" ng-click="form.delete(this,data)">Remove</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</div>

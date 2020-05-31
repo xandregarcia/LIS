@@ -1,4 +1,4 @@
-var app = angular.module('sp_prof',['account-module','app-module']);
+var app = angular.module('sp_profile',['account-module','app-module']);
 
 app.controller('sp_profCtrl',function($scope,form) {
 	

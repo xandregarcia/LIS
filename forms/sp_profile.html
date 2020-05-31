@@ -9,12 +9,12 @@
                             <span class="au-breadcrumb-span">You are here:</span>
                             <ul class="list-unstyled list-inline au-breadcrumb__list">
                                 <li class="list-inline-item active">
-                                    <a href="index.php">Home</a>
+                                    <a href="index.php">Maintenance</a>
                                 </li>
                                 <li class="list-inline-item seprate">
                                     <span>/</span>
                                 </li>
-                                <li class="list-inline-item">Dashboard</li>
+                                <li class="list-inline-item">User Information</li>
                             </ul>
                         </div>
                     </div>
@@ -38,15 +38,13 @@
     <div class="card-body card-block">
 
         <div class="col-md-14 m-t-5 m-l-10">
+
 			<form name="formHolder.sp_profile" class="form-horizontal" id="formHolder.sp_profile" novalidate autocomplete="off">
-                <div class="input-group">
                     
 				<div class="form-group" ng-class="{'has-error': formHolder.sp_profile.users_firstname.$touched && formHolder.sp_profile.firstname.$invalid}">
                     
                     <div class="col-md-7 m-l-20">
-                        <div class="input-group-addon">
-                        <label class="form-control-label">Firstname</label>
-                        </div>
+                        <label class="form-control-label">First Name</label>
 						<input type="text" class="form-control" name="firstname" ng-model="sp_profile.firstname" ng-disabled="controls.ok.btn" required>
 						<span class="help-block" ng-show="formHolder.sp_profile.firstname.$touched && formHolder.sp_profile.firstname.$invalid">This field is required</span>
                     </div>
@@ -55,10 +53,7 @@
 
 			    <div class="form-group" ng-class="{'has-error': formHolder.sp_profile.middlename.$touched && formHolder.sp_profile.middlename.$invalid}">
 					 <div class="col-md-7 m-l-20">
-
-                         <div class="input-group-addon">
-                        <label>Middlename</label>
-                        </div>
+                        <label>Middle Name</label>
 						<input type="text" class="form-control" name="middlename" ng-model="sp_profile.middlename" ng-disabled="controls.ok.btn" required>
 						<span class="help-block" ng-show="formHolder.sp_profile.middlename.$touched && formHolder.sp_profile.middlename.$invalid">This field is required</span>
 					</div>
@@ -66,8 +61,7 @@
                
 				<div class="form-group" ng-class="{'has-error': formHolder.sp_profile.lastname.$touched && formHolder.sp_profile.lastname.$invalid}">
 					 <div class="col-md-7 m-l-20">
-                         <div class="input-group-addon">
-						<label>Lastname</label></div>
+						<label>Last Name</label>
 						<input type="text" class="form-control" name="lastname" ng-model="sp_profile.lastname" ng-disabled="controls.ok.btn" required>
 						<span class="help-block" ng-show="formHolder.sp_profile.lastname.$touched && formHolder.sp_profile.lastname.$invalid">This field is required</span>
 					</div>
@@ -88,11 +82,11 @@
 						<span class="help-block" ng-show="formHolder.sp_profile.position.$touched && formHolder.sp_profile.position.$invalid">This field is required</span>
 					</div>
                 </div>
-                <div class="form-group" ng-class="{'has-error': formHolder.sp_profile.email.$touched && formHolder.sp_profile.email.$invalid}">
+                <div class="form-group" ng-class="{'has-error': formHolder.sp_profile.email_add.$touched && formHolder.sp_profile.email_add.$invalid}">
 					 <div class="col-md-7 m-l-20">
 						<label>E-mail</label>
-						<input type="email" class="form-control" name="email" ng-model="sp_profile.email" ng-disabled="controls.ok.btn" required></select>
-						<span class="help-block" ng-show="formHolder.sp_profile.email.$touched && formHolder.sp_profile.email.$invalid">Please include your email</span>
+						<input type="email" class="form-control" name="email" ng-model="sp_profile.email_add" ng-disabled="controls.ok.btn" required></select>
+						<span class="help-block" ng-show="formHolder.sp_profile.email_add.$touched && formHolder.sp_profile.email.$invalid">Please include your email</span>
 					</div>
                 </div>
 
@@ -121,15 +115,14 @@
 					</div>
 				</div>
 
-				<!-- <div class="form-group" ng-class="{'has-error': formHolder.sp_profile.groups.$touched && formHolder.sp_profile.groups.$invalid}">
-					 <div class="col-md-7">
+				<div class="form-group" ng-class="{'has-error': formHolder.sp_profile.groups.$touched && formHolder.sp_profile.groups.$invalid}">
+					 <div class="col-md-7 m-l-20">
 						<label>Group</label>
 						<select class="form-control" name="groups" ng-model="sp_profile.groups" ng-disabled="controls.ok.btn" ng-options="data.group_name for data in groups track by data.group_id" required></select>
 						<span class="help-block" ng-show="formHolder.sp_profile.groups.$touched && formHolder.sp_profile.groups.$invalid">This field is required</span>
 					</div>
-				</div> -->
-				
-			</form>
+				</div> 
+				</form>
 		</div>
     
     </div>
@@ -139,47 +132,4 @@
 		<button type="submit" class="btn btn-primary" ng-click="form.list(this)" style="margin-right: 5px;">{{controls.cancel.label}}</button>
 	</div>
 	
-</div>
-
-
-
-<div class="col-lg-6">
-    <div class="card">
-        <div class="card-header">
-            <strong>Sangguniang Panlalawigan Information</strong>
-            <small> Form</small>
-        </div>
-        <div class="card-body card-block">
-            <div class="form-group">
-                <label for="company" class=" form-control-label">Company</label>
-                <input type="text" id="company" placeholder="Enter your company name" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="vat" class=" form-control-label">VAT</label>
-                <input type="text" id="vat" placeholder="DE1234567890" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="street" class=" form-control-label">Street</label>
-                <input type="text" id="street" placeholder="Enter street name" class="form-control">
-            </div>
-            <div class="row form-group">
-                <div class="col-8">
-                    <div class="form-group">
-                        <label for="city" class=" form-control-label">City</label>
-                        <input type="text" id="city" placeholder="Enter your city" class="form-control">
-                    </div>
-                </div>
-                <div class="col-8">
-                    <div class="form-group">
-                        <label for="postal-code" class=" form-control-label">Postal Code</label>
-                        <input type="text" id="postal-code" placeholder="Postal Code" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="country" class=" form-control-label">Country</label>
-                <input type="text" id="country" placeholder="Country name" class="form-control">
-            </div>
-        </div>
-    </div>
 </div>
