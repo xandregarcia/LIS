@@ -1,4 +1,4 @@
-var app = angular.module('position',['position-module']);
+var app = angular.module('position',['account-module','position-module']);
 
 app.controller('positionCtrl',function($scope,form) {
 	

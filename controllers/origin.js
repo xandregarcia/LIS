@@ -1,4 +1,4 @@
-var app = angular.module('origin',['origin-module']);
+var app = angular.module('origin',['account-module','origin-module']);
 
 app.controller('originCtrl',function($scope,form) {
 	

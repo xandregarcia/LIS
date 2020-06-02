@@ -1,4 +1,4 @@
-var app = angular.module('agency',['agency-module']);
+var app = angular.module('agency',['account-module','agency-module']);
 
 app.controller('agencyCtrl',function($scope,form) {
 	

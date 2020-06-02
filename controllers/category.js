@@ -1,4 +1,4 @@
-var app = angular.module('category',['category-module']);
+var app = angular.module('category',['account-module','category-module']);
 
 app.controller('categoryCtrl',function($scope,form) {
 	
