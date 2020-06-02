@@ -17,6 +17,6 @@ $user = $con->getData("SELECT * FROM tbl_agency WHERE id = $_POST[id]");
 // $user[0]['users_department'] = $department[0];
 
 header("Content-Type: application/json");
-echo json_encode($agency[0]);
+echo json_encode($user[0]);
 
 ?>

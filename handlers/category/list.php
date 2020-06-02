@@ -12,6 +12,6 @@ $user = $con->getData("SELECT * FROM tbl_category");
 
 
 header("Content-Type: application/json");
-echo json_encode($category);
+echo json_encode($user);
 
 ?>

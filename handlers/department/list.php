@@ -8,11 +8,10 @@ session_start();
 
 $con = new pdo_db();
 
-$user = $con->getData("SELECT * FROM tbl_department
-");
+$user = $con->getData("SELECT * FROM tbl_department");
 
 
 header("Content-Type: application/json");
-echo json_encode($department);
+echo json_encode($user);
 
 ?>

@@ -12,6 +12,6 @@ $user = $con->getData("SELECT * FROM tbl_agency");
 
 
 header("Content-Type: application/json");
-echo json_encode($agency);
+echo json_encode($user);
 
 ?>
