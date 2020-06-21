@@ -54,23 +54,9 @@
                     <h4 class="name">{{accountProfile.fullname}}</h4>
                     <a href="javascript:;" logout-account>Sign out</a>
                 </div>
-                <aside class="menu-sidebar2">
-            <div class="logo">
-                <a href="index.php">
-                    <img src="images/icon/logo-white.png" alt="Cool Admin" />
-                </a>
-            </div>
-            <div class="menu-sidebar2__content js-scrollbar1">
-                <div class="account2">
-                    <div class="image img-cir img-120">
-                        <img src="{{accountProfile.picture}}"/>
-                    </div>
-                    <h4 class="name">{{accountProfile.fullname}}</h4>
-                    <a href="javascript:;" logout-account>Sign out</a>
-                </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
+                        <li class="has-sub"  ng-show="accountProfile.pages_access.dashboard.value">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard
                                 <span class="arrow">
@@ -78,7 +64,7 @@
                                 </span>
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
+                                <li >
                                     <a href="incomingcomm.php">
                                         <i class="fas fa-tachometer-alt"></i>Incoming Communications</a>
                                 </li>
@@ -170,7 +156,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="has-sub">
+                        <li class="has-sub"  ng-show="accountProfile.pages_access.maintenance.value">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-gears"></i>Maintenance
                                 <span class="arrow">
@@ -180,7 +166,7 @@
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
 
                                 <li class="active"><a href="sp_profile.php"><i class="fab fa-flickr"></i>Users</a></li>
-                                <li><a href="javascript:;"><i class="fas fa-comment-alt"></i>Groups</a> </li>
+                                <li><a href="group.php"><i class="fas fa-comment-alt"></i>Groups</a> </li>
                                 <li>
                                     <a href="javascript:;">
                                         <i class="far fa-window-maximize"></i>Origin</a>
