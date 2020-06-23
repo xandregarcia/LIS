@@ -8,9 +8,10 @@ session_start();
 
 $con = new pdo_db();
 
-$user = $con->getData("SELECT * FROM tbl_category WHERE id = $_POST[id]");
+$user = $con->getData("SELECT * FROM tbl_comm_meeting_ordi");
+
 
 header("Content-Type: application/json");
-echo json_encode($category[0]);
+echo json_encode($user);
 
 ?>
