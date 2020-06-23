@@ -44,8 +44,7 @@ angular.module('agency-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 			
         bui.hide();
 			
-      }, function myError(response) {
-			 
+      }, function myError(response) {		 
         bui.hide();
 			
       });
@@ -98,7 +97,7 @@ angular.module('agency-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 	self.addEdit = function(scope,row) {	
 		
 		scope.agency = {};
-		scope.agency.id = 0;
+		scope.agency.agency_id = 0;
 		
 		mode(scope,row);
 		
@@ -109,11 +108,11 @@ angular.module('agency-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 		
 		if (row != null) {
 		
-			if (scope.$id > 2) scope = scope.$parent;				
+			if (scope.agency_id > 2) scope = scope.$parent;				
 			$http({
 			  method: 'POST',
 			  url: 'handlers/agency/view.php',
-			  data: {id: row.id}
+			  data: {id: row.agency_id}
 			}).then(function mySucces(response) {
 				
 				angular.copy(response.data, scope.agency);
@@ -148,8 +147,8 @@ angular.module('agency-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 			data: {agency: scope.agency}
 		}).then(function mySucces(response) {
 			
-			if (scope.agency.id == 0) {
-				scope.agency.id = response.data;
+			if (scope.agency.agency_id == 0) {
+				scope.agency.agency_id = response.data;
 				growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully added.');
 				}	else{
 					growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully updated.');
@@ -168,12 +167,12 @@ angular.module('agency-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 			
 		var onOk = function() {
 			
-			if (scope.$id > 2) scope = scope.$parent;			
+			if (scope.agency_id > 2) scope = scope.$parent;			
 			
 			$http({
 			  method: 'POST',
 			  url: 'handlers/agency/delete.php',
-			  data: {id: [row.id]}
+			  data: {agency_id: [row.agency_id]}
 			}).then(function mySucces(response) {
 
 				self.list(scope);

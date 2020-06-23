@@ -1,4 +1,4 @@
-angular.module('referral-module', ['bootstrap-growl', 'bootstrap-modal', 'form-validator', 'block-ui']).factory('form', function ($http, $compile, $timeout, growl, bootstrapModal, validate, bui) {
+angular.module('resolution-module', ['bootstrap-growl', 'bootstrap-modal', 'form-validator', 'block-ui']).factory('form', function ($http, $compile, $timeout, growl, bootstrapModal, validate, bui) {
 
   function form() {
     
@@ -21,10 +21,10 @@ angular.module('referral-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
         }
       };
 			
-      scope.referral = {};
-      scope.referral.id = 0;
+      scope.resolution = {};
+      scope.resolution.id = 0;
 
-      scope.referrals = []; // list
+      scope.resolutions = []; // list
 
 	};
 
@@ -32,15 +32,15 @@ angular.module('referral-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 			
       bui.show();
 		
-      scope.referral = {};
-      scope.referral.id = 0;
+      scope.resolution = {};
+      scope.resolution.id = 0;
 		
       $http({
         method: 'POST',
-        url: 'handlers/referral/list.php',
+        url: 'handlers/resolution/list.php',
       }).then(function mySucces(response) {
 			
-        scope.referrals = response.data;
+        scope.resolutions = response.data;
 			
         bui.hide();
 			
@@ -49,11 +49,11 @@ angular.module('referral-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 			
       });
 		
-      $('#x_content').load('lists/referral.html', function() {
+      $('#x_content').load('lists/resolution.html', function() {
         $timeout(function() { $compile($('#x_content')[0])(scope); },100);								
 			// instantiate datable
         $timeout(function() {
-          $('#referral').DataTable({
+          $('#resolution').DataTable({
             "ordering": true,
             "paging":true
                     
@@ -66,7 +66,7 @@ angular.module('referral-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 	
 	function validate(scope) {
 									// change
-		var controls = scope.formHolder.referral.$$controls;
+		var controls = scope.formHolder.resolution.$$controls;
 		
 		angular.forEach(controls,function(elem,i) {
 			
@@ -74,7 +74,7 @@ angular.module('referral-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 								
 		});
 							 // change
-		return scope.formHolder.referral.$invalid;
+		return scope.formHolder.resolution.$invalid;
 		
 	};
 	
@@ -96,13 +96,13 @@ angular.module('referral-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 	
 	self.addEdit = function(scope,row) {	
 		
-		scope.referral = {};
-		scope.referral.id = 0;
+		scope.resolution = {};
+		scope.resolution.id = 0;
 		
 		mode(scope,row);
 		
 		$('#x_content').html(loading);
-		$('#x_content').load('forms/referral.html',function() {
+		$('#x_content').load('forms/resolution.html',function() {
 			$timeout(function() { $compile($('#x_content')[0])(scope); },200);
 		});
 		
@@ -111,11 +111,11 @@ angular.module('referral-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 			if (scope.$id > 2) scope = scope.$parent;				
 			$http({
 			  method: 'POST',
-			  url: 'handlers/referral/view.php',
+			  url: 'handlers/resolution/view.php',
 			  data: {id: row.id}
 			}).then(function mySucces(response) {
 				
-				angular.copy(response.data, scope.referral);
+				angular.copy(response.data, scope.resolution);
 				
 			}, function myError(response) {
 				 
@@ -143,17 +143,17 @@ angular.module('referral-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 		
 		$http({
 			method: 'POST',
-			url: 'handlers/referral/save.php',
-			data: {referral: scope.referral}
+			url: 'handlers/resolution/save.php',
+			data: {resolution: scope.resolution}
 		}).then(function mySucces(response) {
 			
-			if (scope.referral.id == 0) {
-				scope.referral.id = response.data;
+			if (scope.resolution.id == 0) {
+				scope.resolution.id = response.data;
 				growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully added.');
 				}	else{
 					growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully updated.');
 				}
-			mode(scope,scope.referral);
+			mode(scope,scope.resolution);
 			
 		}, function myError(response) {
 			 
@@ -171,7 +171,7 @@ angular.module('referral-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/referral/delete.php',
+			  url: 'handlers/resolution/delete.php',
 			  data: {id: [row.id]}
 			}).then(function mySucces(response) {
 

@@ -44,8 +44,7 @@ angular.module('department-module', ['bootstrap-growl', 'bootstrap-modal', 'form
 			
         bui.hide();
 			
-      }, function myError(response) {
-			 
+      }, function myError(response) {		 
         bui.hide();
 			
       });
@@ -67,7 +66,7 @@ angular.module('department-module', ['bootstrap-growl', 'bootstrap-modal', 'form
 	
 	function validate(scope) {
 									// change
-		var controls = scope.formHolder.agency.$$controls;
+		var controls = scope.formHolder.department.$$controls;
 		
 		angular.forEach(controls,function(elem,i) {
 			
@@ -75,7 +74,7 @@ angular.module('department-module', ['bootstrap-growl', 'bootstrap-modal', 'form
 								
 		});
 							 // change
-		return scope.formHolder.agency.$invalid;
+		return scope.formHolder.department.$invalid;
 		
 	};
 	
@@ -97,13 +96,13 @@ angular.module('department-module', ['bootstrap-growl', 'bootstrap-modal', 'form
 	
 	self.addEdit = function(scope,row) {	
 		
-		scope.agency = {};
-		scope.agency.id = 0;
+		scope.department = {};
+		scope.department.id = 0;
 		
 		mode(scope,row);
 		
 		$('#x_content').html(loading);
-		$('#x_content').load('forms/agency.html',function() {
+		$('#x_content').load('forms/department.html',function() {
 			$timeout(function() { $compile($('#x_content')[0])(scope); },200);
 		});
 		
@@ -112,11 +111,11 @@ angular.module('department-module', ['bootstrap-growl', 'bootstrap-modal', 'form
 			if (scope.$id > 2) scope = scope.$parent;				
 			$http({
 			  method: 'POST',
-			  url: 'handlers/agency/view.php',
+			  url: 'handlers/department/view.php',
 			  data: {id: row.id}
 			}).then(function mySucces(response) {
 				
-				angular.copy(response.data, scope.agency);
+				angular.copy(response.data, scope.department);
 				
 			}, function myError(response) {
 				 
@@ -144,17 +143,17 @@ angular.module('department-module', ['bootstrap-growl', 'bootstrap-modal', 'form
 		
 		$http({
 			method: 'POST',
-			url: 'handlers/agency/save.php',
-			data: {agency: scope.agency}
+			url: 'handlers/department/save.php',
+			data: {department: scope.department}
 		}).then(function mySucces(response) {
 			
-			if (scope.agency.id == 0) {
-				scope.agency.id = response.data;
+			if (scope.department.id == 0) {
+				scope.department.id = response.data;
 				growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully added.');
 				}	else{
 					growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully updated.');
 				}
-			mode(scope,scope.agency);
+			mode(scope,scope.department);
 			
 		}, function myError(response) {
 			 
@@ -172,7 +171,7 @@ angular.module('department-module', ['bootstrap-growl', 'bootstrap-modal', 'form
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/agency/delete.php',
+			  url: 'handlers/department/delete.php',
 			  data: {id: [row.id]}
 			}).then(function mySucces(response) {
 

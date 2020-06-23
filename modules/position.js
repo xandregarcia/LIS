@@ -44,8 +44,7 @@ angular.module('position-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 			
         bui.hide();
 			
-      }, function myError(response) {
-			 
+      }, function myError(response) {		 
         bui.hide();
 			
       });
@@ -67,7 +66,7 @@ angular.module('position-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 	
 	function validate(scope) {
 									// change
-		var controls = scope.formHolder.agency.$$controls;
+		var controls = scope.formHolder.position.$$controls;
 		
 		angular.forEach(controls,function(elem,i) {
 			
@@ -75,7 +74,7 @@ angular.module('position-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 								
 		});
 							 // change
-		return scope.formHolder.agency.$invalid;
+		return scope.formHolder.position.$invalid;
 		
 	};
 	
@@ -97,13 +96,13 @@ angular.module('position-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 	
 	self.addEdit = function(scope,row) {	
 		
-		scope.agency = {};
-		scope.agency.id = 0;
+		scope.position = {};
+		scope.position.id = 0;
 		
 		mode(scope,row);
 		
 		$('#x_content').html(loading);
-		$('#x_content').load('forms/agency.html',function() {
+		$('#x_content').load('forms/position.html',function() {
 			$timeout(function() { $compile($('#x_content')[0])(scope); },200);
 		});
 		
@@ -112,11 +111,11 @@ angular.module('position-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 			if (scope.$id > 2) scope = scope.$parent;				
 			$http({
 			  method: 'POST',
-			  url: 'handlers/agency/view.php',
+			  url: 'handlers/position/view.php',
 			  data: {id: row.id}
 			}).then(function mySucces(response) {
 				
-				angular.copy(response.data, scope.agency);
+				angular.copy(response.data, scope.position);
 				
 			}, function myError(response) {
 				 
@@ -144,17 +143,17 @@ angular.module('position-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 		
 		$http({
 			method: 'POST',
-			url: 'handlers/agency/save.php',
-			data: {agency: scope.agency}
+			url: 'handlers/position/save.php',
+			data: {position: scope.position}
 		}).then(function mySucces(response) {
 			
-			if (scope.agency.id == 0) {
-				scope.agency.id = response.data;
+			if (scope.position.id == 0) {
+				scope.position.id = response.data;
 				growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully added.');
 				}	else{
 					growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully updated.');
 				}
-			mode(scope,scope.agency);
+			mode(scope,scope.position);
 			
 		}, function myError(response) {
 			 
@@ -172,7 +171,7 @@ angular.module('position-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/agency/delete.php',
+			  url: 'handlers/position/delete.php',
 			  data: {id: [row.id]}
 			}).then(function mySucces(response) {
 

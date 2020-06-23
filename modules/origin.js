@@ -44,8 +44,7 @@ angular.module('origin-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 			
         bui.hide();
 			
-      }, function myError(response) {
-			 
+      }, function myError(response) {		 
         bui.hide();
 			
       });
@@ -67,7 +66,7 @@ angular.module('origin-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 	
 	function validate(scope) {
 									// change
-		var controls = scope.formHolder.agency.$$controls;
+		var controls = scope.formHolder.origin.$$controls;
 		
 		angular.forEach(controls,function(elem,i) {
 			
@@ -75,7 +74,7 @@ angular.module('origin-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 								
 		});
 							 // change
-		return scope.formHolder.agency.$invalid;
+		return scope.formHolder.origin.$invalid;
 		
 	};
 	
@@ -97,13 +96,13 @@ angular.module('origin-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 	
 	self.addEdit = function(scope,row) {	
 		
-		scope.agency = {};
-		scope.agency.id = 0;
+		scope.origin = {};
+		scope.origin.id = 0;
 		
 		mode(scope,row);
 		
 		$('#x_content').html(loading);
-		$('#x_content').load('forms/agency.html',function() {
+		$('#x_content').load('forms/origin.html',function() {
 			$timeout(function() { $compile($('#x_content')[0])(scope); },200);
 		});
 		
@@ -112,11 +111,11 @@ angular.module('origin-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 			if (scope.$id > 2) scope = scope.$parent;				
 			$http({
 			  method: 'POST',
-			  url: 'handlers/agency/view.php',
+			  url: 'handlers/origin/view.php',
 			  data: {id: row.id}
 			}).then(function mySucces(response) {
 				
-				angular.copy(response.data, scope.agency);
+				angular.copy(response.data, scope.origin);
 				
 			}, function myError(response) {
 				 
@@ -144,17 +143,17 @@ angular.module('origin-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 		
 		$http({
 			method: 'POST',
-			url: 'handlers/agency/save.php',
-			data: {agency: scope.agency}
+			url: 'handlers/origin/save.php',
+			data: {origin: scope.origin}
 		}).then(function mySucces(response) {
 			
-			if (scope.agency.id == 0) {
-				scope.agency.id = response.data;
+			if (scope.origin.id == 0) {
+				scope.origin.id = response.data;
 				growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully added.');
 				}	else{
 					growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully updated.');
 				}
-			mode(scope,scope.agency);
+			mode(scope,scope.origin);
 			
 		}, function myError(response) {
 			 
@@ -172,7 +171,7 @@ angular.module('origin-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/agency/delete.php',
+			  url: 'handlers/origin/delete.php',
 			  data: {id: [row.id]}
 			}).then(function mySucces(response) {
 
