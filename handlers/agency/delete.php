@@ -10,6 +10,6 @@ session_start();
 
 $con = new pdo_db("tbl_agency");
 
-$delete = $con->deleteData(array("id"=>implode(",",$_POST['id'])));	
+$delete = $con->deleteData(array("id"=>implode(",",$_POST['agency_id'])));	
 
 ?>
