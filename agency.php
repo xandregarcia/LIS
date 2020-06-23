@@ -323,24 +323,16 @@
             <!-- END HEADER DESKTOP-->
 
             <section>
-                <div class="section__content section__content--p30 m-t-20" style="
-    top: 75px;
-">
+                <div class="section__content section__content--p30 m-t-20" style="top: 75px;">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="mx-auto w-100 col-xl-14">
-
-
-                                <!-- USER DATA-->
+                                <!-- DATA-->
                                 <div class="agency-data m-b-100">
                                   <div class="x_content" id= "x_content">
-
-
                                   </div>
                                 </div>
-
-
-                                <!-- END USER DATA-->
+                              <!-- END DATA-->
                             </div>
                         </div>
                     </div>
