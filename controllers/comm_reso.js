@@ -1,6 +1,6 @@
-var app = angular.module('commReso',['account-module','commReso-module']);
+var app = angular.module('comm_reso',['comm_reso-module']);
 
-app.controller('commResoCtrl',function($scope,form) {
+app.controller('comm_resoCtrl',function($scope,form) {
 	
 	$scope.views = {};
 	$scope.formHolder = {};

@@ -1,4 +1,4 @@
-var app = angular.module('referral',['account-module','referral-module']);
+var app = angular.module('referral',['referral-module']);
 
 app.controller('referralCtrl',function($scope,form) {
 	
