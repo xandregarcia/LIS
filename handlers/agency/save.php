@@ -9,9 +9,9 @@ include_once '../../db.php';
 $con = new pdo_db("tbl_agency");
 
 
-if ($_POST['agency']['id']) {
+if ($_POST['agency']['agency_id']) {
 	
-	$sp_profile = $con->updateObj($_POST['agency'],'id');
+	$sp_profile = $con->updateObj($_POST['agency'],'agency_id');
 	
 } else {
 	$sp_profile = $con->insertObj($_POST['agency']);

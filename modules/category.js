@@ -67,7 +67,7 @@ angular.module('category-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 	
 	function validate(scope) {
 									// change
-		var controls = scope.formHolder.agency.$$controls;
+		var controls = scope.formHolder.category.$$controls;
 		
 		angular.forEach(controls,function(elem,i) {
 			
@@ -75,7 +75,7 @@ angular.module('category-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 								
 		});
 							 // change
-		return scope.formHolder.agency.$invalid;
+		return scope.formHolder.category.$invalid;
 		
 	};
 	
@@ -97,13 +97,13 @@ angular.module('category-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 	
 	self.addEdit = function(scope,row) {	
 		
-		scope.agency = {};
-		scope.agency.id = 0;
+		scope.category = {};
+		scope.category.id = 0;
 		
 		mode(scope,row);
 		
 		$('#x_content').html(loading);
-		$('#x_content').load('forms/agency.html',function() {
+		$('#x_content').load('forms/category.html',function() {
 			$timeout(function() { $compile($('#x_content')[0])(scope); },200);
 		});
 		
@@ -112,11 +112,11 @@ angular.module('category-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 			if (scope.$id > 2) scope = scope.$parent;				
 			$http({
 			  method: 'POST',
-			  url: 'handlers/agency/view.php',
+			  url: 'handlers/category/view.php',
 			  data: {id: row.id}
 			}).then(function mySucces(response) {
 				
-				angular.copy(response.data, scope.agency);
+				angular.copy(response.data, scope.category);
 				
 			}, function myError(response) {
 				 
@@ -144,17 +144,17 @@ angular.module('category-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 		
 		$http({
 			method: 'POST',
-			url: 'handlers/agency/save.php',
-			data: {agency: scope.agency}
+			url: 'handlers/category/save.php',
+			data: {category: scope.category}
 		}).then(function mySucces(response) {
 			
-			if (scope.agency.id == 0) {
-				scope.agency.id = response.data;
+			if (scope.category.id == 0) {
+				scope.category.id = response.data;
 				growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully added.');
 				}	else{
 					growl.show('btn btn-success',{from: 'top', amount: 55},'Information successfully updated.');
 				}
-			mode(scope,scope.agency);
+			mode(scope,scope.category);
 			
 		}, function myError(response) {
 			 
@@ -172,7 +172,7 @@ angular.module('category-module', ['bootstrap-growl', 'bootstrap-modal', 'form-v
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/agency/delete.php',
+			  url: 'handlers/category/delete.php',
 			  data: {id: [row.id]}
 			}).then(function mySucces(response) {
 
