@@ -13,32 +13,39 @@ define('system_privileges', array(
 		),
 	),
 	array(
-		"id"=>"equipment",
-		"description"=>"Equipment",
+		"id"=>"referrals",
+		"description"=>"Referrals",
 		"privileges"=>array(
-			array("id"=>1,"description"=>"Show Equipment","value"=>false),
+			array("id"=>1,"description"=>"Show Referrals","value"=>false),
 			
 		),
 	),
 	 array(
-		 "id"=>"report",
-		 "description"=>"Report",
+		 "id"=>"committee_rep",
+		 "description"=>"Committee Report",
 		 "privileges"=>array(
-		 array("id"=>1,"description"=>"Show Report","value"=>false),
+		 array("id"=>1,"description"=>"Show Committee Report","value"=>false),
 		 ),
 
 	),array(
 		 "id"=>"maintenance",
 		 "description"=>"Maintenance",
 		 "privileges"=>array(
-		 array("id"=>1,"description"=>"Show Report","value"=>false),
+		 array("id"=>1,"description"=>"Show Maintenance","value"=>false),
 		 ),
 	),array(
-		 "id"=>"security",
-		 "description"=>"Security",
+		 "id"=>"Furnish",
+		 "description"=>"Furnish",
 		 "privileges"=>array(
-		 array("id"=>1,"description"=>"Show Security","value"=>false),
-		 ),
+		 array("id"=>1,"description"=>"Show Furnish","value"=>false),
+         ),
+    ),array(
+    "id"=>"Report",
+    "description"=>"Report",
+    "privileges"=>array(
+    array("id"=>1,"description"=>"Show Report","value"=>false),
+    ),
+         
 	),
 	
 ));

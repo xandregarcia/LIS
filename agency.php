@@ -72,19 +72,11 @@
                                     <a href="javascript:;">
                                         <i class="fas fa-tachometer-alt"></i>Add Communication</a>
                                 </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fas fa-tachometer-alt"></i>Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fas fa-tachometer-alt"></i>Dashboard 4</a>
-                                </li>
                             </ul>
                         </li>
                       
               
-                        <li class="has-sub">
+                        <li class="has-sub" ng-show="accountProfile.pages_access.maintenance.value">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-gears"></i>Maintenance
                                 <span class="arrow">

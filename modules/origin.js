@@ -104,7 +104,9 @@ angular.module('origin-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 		$('#x_content').html(loading);
 		$('#x_content').load('forms/origin.html',function() {
 			$timeout(function() { $compile($('#x_content')[0])(scope); },200);
-		});
+        });
+        
+        
 		
 		if (row != null) {
 		
@@ -189,7 +191,8 @@ angular.module('origin-module', ['bootstrap-growl', 'bootstrap-modal', 'form-val
 
 		bootstrapModal.confirm(scope,'Confirmation','Are you sure you want to delete this record?',onOk,function() {});
 			
-		};
+        };
+        
 
 
 };

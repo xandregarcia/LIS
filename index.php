@@ -75,7 +75,7 @@
                             </ul>
                         </li>
                       
-                        <li class="has-sub">
+                        <li class="has-sub" ng-show="accountProfile.pages_access.referrals.value">
                             <a class = "js-arrow" href="#">
                                 <i class="fa fa-mail-forward"></i>Referrals</a>
                                 <span class="arrow">
@@ -99,7 +99,7 @@
 
                         </li>
 
-                         <li class="has-sub">
+                         <li class="has-sub" ng-show="accountProfile.pages_access.comittee_rep.value">
                             <a class = "js-arrow" href="#">
                                 <i class="fa fa-mail-forward"></i>Committee Reports</a>
                                 <span class="arrow">
@@ -118,7 +118,7 @@
                         </ul>
 
                         </li>
-                        <li class="has-sub">
+                        <li class="has-sub" ng-show="accountProfile.pages_access.maintenance.value">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-gears"></i>Maintenance
                                 <span class="arrow">
@@ -194,7 +194,7 @@
                                 </li>
 
 
-                                <li class="has-sub">
+                                <li class="has-sub" ng-show="accountProfile.pages_access.Furnish.value">
                             <a class = "js-arrow" href="#">
                                 <i class="fa fa-mail-forward"></i>Furnish</a>
                                 <span class="arrow">
@@ -209,7 +209,7 @@
                         </ul>
 
                         </li>
-                        <li class="has-sub">
+                        <li class="has-sub" ng-show="accountProfile.pages_access.Reports.value">
                             <a class = "js-arrow" href="#">
                                 <i class="fa fa-mail-forward"></i>Reports</a>
                                 <span class="arrow">
