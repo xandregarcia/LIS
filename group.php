@@ -63,27 +63,14 @@
                                     <i class="fas fa-angle-down"></i>
                                 </span>
                             </a>
-
-
-                            
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="incomingcomm.php">
                                         <i class="fas fa-tachometer-alt"></i>Incoming Communications</a>
                                 </li>
-
-                                 <li>
-                                    <a href="javascript:;">
-                                        <i class="fas fa-tachometer-alt"></i>List Communications</a>
-                                </li>
-
                                 <li>
                                     <a href="javascript:;">
-                                        <i class="fas fa-tachometer-alt"></i>Add Communication</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fas fa-tachometer-alt"></i>View Archived Communication</a>
+                                        <i class="fas fa-tachometer-alt"></i>Archived Communication</a>
                                 </li>
                             </ul>
                         </li>
@@ -111,53 +98,25 @@
                         </ul>
 
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-trophy"></i>Features
+
+                         <li class="has-sub">
+                            <a class = "js-arrow" href="#">
+                                <i class="fa fa-mail-forward"></i>Committee Reports</a>
                                 <span class="arrow">
                                     <i class="fas fa-angle-down"></i>
                                 </span>
                             </a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="table.html">
-                                        <i class="fas fa-table"></i>Tables</a>
-                                </li>
-                                <li>
-                                    <a href="form.html">
-                                        <i class="far fa-check-square"></i>Forms</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fas fa-calendar-alt"></i>Calendar</a>
-                                </li>
-                                <li>
-                                    <a href="map.html">
-                                        <i class="fas fa-map-marker-alt"></i>Maps</a>
-                                </li>
-                            </ul>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fas fa-table"></i>Committee Reports for Ordinance</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages
-                                <span class="arrow">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="login.html">
-                                        <i class="fas fa-sign-in-alt"></i>Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">
-                                        <i class="fas fa-user"></i>Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">
-                                        <i class="fas fa-unlock-alt"></i>Forget Password</a>
-                                </li>
-                            </ul>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="far fa-check-square"></i>Committee Reports for Resolutions</a>
+                        </li>
+                        </ul>
+
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
@@ -167,47 +126,105 @@
                                 </span>
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-
-                                <li class="active"><a href="sp_profile.php"><i class="fab fa-flickr"></i>Users</a></li>
-                                <li><a href="javascript:;"><i class="fas fa-comment-alt"></i>Groups</a> </li>
                                 <li>
-                                    <a href="javascript:;">
+                                    <a href="sp_profile.php">
+                                        <i class="fab fa-flickr"></i>Users</a>
+                                </li>
+                                <li>
+                                    <a href="group.php">
+                                        <i class="fas fa-comment-alt"></i>Groups</a>
+                                </li>
+                                <li>
+                                    <a href="origin.php">
                                         <i class="far fa-window-maximize"></i>Origin</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:;">
-                                        <i class="far fa-id-card"></i>Cards</a>
+                                    <a href="position.php">
+                                        <i class="far fa-window-maximize"></i>Position</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">
-                                        <i class="far fa-bell"></i>Alerts</a>
+                                        <i class="far fa-window-maximize"></i>Agencies</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">
-                                        <i class="fas fa-tasks"></i>Progress Bars</a>
+                                        <i class="far fa-window-maximize"></i>Categories</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">
-                                        <i class="far fa-window-restore"></i>Modals</a>
+                                        <i class="far fa-window-maximize"></i>Committees</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">
-                                        <i class="fas fa-toggle-on"></i>Switchs</a>
+                                        <i class="far fa-window-maximize"></i>Department</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">
-                                        <i class="fas fa-th-large"></i>Grids</a>
+                                        <i class="far fa-window-maximize"></i>Origin</a>
+                              
                                 </li>
                                 <li>
                                     <a href="javascript:;">
-                                        <i class="fab fa-font-awesome"></i>FontAwesome</a>
+                                        <i class="far fa-window-maximize"></i>Form</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">
-                                        <i class="fas fa-font"></i>Typography</a>
+                                        <i class="far fa-window-maximize"></i>Publication</a>
                                 </li>
-                            </ul>
+
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="far fa-window-maximize"></i>Add Old Resolution</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="far fa-window-maximize"></i>Add Old Ordinance</a>
+                                </li>
+                                </ul>
                         </li>
+                                <li>
+                                <a href="javascript:;">
+                                <i class="far fa-file"></i>Resolution
+                                </a>
+                                </li>
+                                <li>
+                                <a href="javascript:;">
+                                <i class="far fa-file"></i>Ordinance
+                                </a>
+                                </li>
+
+
+                                <li class="has-sub">
+                            <a class = "js-arrow" href="#">
+                                <i class="fa fa-mail-forward"></i>Furnish</a>
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fas fa-table"></i>Furnish Resolution</a>
+                        </li>
+                        </ul>
+
+                        </li>
+                        <li class="has-sub">
+                            <a class = "js-arrow" href="#">
+                                <i class="fa fa-mail-forward"></i>Reports</a>
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fas fa-table"></i>Furnish Resolution</a>
+                        </li>
+                        </ul>
+
+                        </li>
+                           
                     </ul>
                 </nav>
             </div>

@@ -6,15 +6,15 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 
 include_once '../../db.php';
 
-$con = new pdo_db("tbl_agency");
+$con = new pdo_db("position_tbl");
 
 
-if ($_POST['agency']['id']) {
+if ($_POST['position']['id']) {
 	
-	$sp_profile = $con->updateObj($_POST['agency'],'id');
+	$position = $con->updateObj($_POST['position'],'id');
 	
 } else {
-	$sp_profile = $con->insertObj($_POST['agency']);
+	$position = $con->insertObj($_POST['position']);
 	echo $con->insertId;
 
 }

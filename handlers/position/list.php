@@ -8,7 +8,7 @@ session_start();
 
 $con = new pdo_db();
 
-$user = $con->getData("SELECT * FROM tbl_position");
+$user = $con->getData("SELECT * FROM position_tbl");
 
 
 header("Content-Type: application/json");

@@ -65,25 +65,59 @@
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="javascript:;">
+                                    <a href="incomingcomm.php">
                                         <i class="fas fa-tachometer-alt"></i>Incoming Communications</a>
                                 </li>
                                 <li>
                                     <a href="javascript:;">
-                                        <i class="fas fa-tachometer-alt"></i>Add Communication</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fas fa-tachometer-alt"></i>Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fas fa-tachometer-alt"></i>Dashboard 4</a>
+                                        <i class="fas fa-tachometer-alt"></i>Archived Communication</a>
                                 </li>
                             </ul>
                         </li>
                       
-              
+                        <li class="has-sub">
+                            <a class = "js-arrow" href="#">
+                                <i class="fa fa-mail-forward"></i>Referrals</a>
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fas fa-table"></i>List Referrals</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="far fa-check-square"></i>Communication for Referrals</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fas fa-calendar-alt"></i>View Archived Referrals</a>
+                        </li>
+                        </ul>
+
+                        </li>
+
+                         <li class="has-sub">
+                            <a class = "js-arrow" href="#">
+                                <i class="fa fa-mail-forward"></i>Committee Reports</a>
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fas fa-table"></i>Committee Reports for Ordinance</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="far fa-check-square"></i>Committee Reports for Resolutions</a>
+                        </li>
+                        </ul>
+
+                        </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-gears"></i>Maintenance
@@ -92,14 +126,105 @@
                                 </span>
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="sp_profile.php">
+                                        <i class="fab fa-flickr"></i>Users</a>
+                                </li>
+                                <li>
+                                    <a href="group.php">
+                                        <i class="fas fa-comment-alt"></i>Groups</a>
+                                </li>
+                                <li>
+                                    <a href="origin.php">
+                                        <i class="far fa-window-maximize"></i>Origin</a>
+                                </li>
+                                <li>
+                                    <a href="position.php">
+                                        <i class="far fa-window-maximize"></i>Position</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="far fa-window-maximize"></i>Agencies</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="far fa-window-maximize"></i>Categories</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="far fa-window-maximize"></i>Committees</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="far fa-window-maximize"></i>Department</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="far fa-window-maximize"></i>Origin</a>
+                              
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="far fa-window-maximize"></i>Form</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="far fa-window-maximize"></i>Publication</a>
+                                </li>
 
-                                <li><a href="userprofile.php"><i class="fab fa-flickr"></i>Users</a></li>
-                                <li><a href="agency.php"><i class="fas fa-comment-alt"></i>Agency</a> </li>
-                                <li><a href="category.php"><i class="fas fa-comment-alt"></i>Category</a> </li>
-                                <li><a href="department.php"><i class="fas fa-comment-alt"></i>Department</a> </li>
-                                <li class="active"><a href="position.php"><i class="fas fa-comment-alt"></i>Position</a> </li>
-                            </ul>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="far fa-window-maximize"></i>Add Old Resolution</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <i class="far fa-window-maximize"></i>Add Old Ordinance</a>
+                                </li>
+                                </ul>
                         </li>
+                                <li>
+                                <a href="javascript:;">
+                                <i class="far fa-file"></i>Resolution
+                                </a>
+                                </li>
+                                <li>
+                                <a href="javascript:;">
+                                <i class="far fa-file"></i>Ordinance
+                                </a>
+                                </li>
+
+
+                                <li class="has-sub">
+                            <a class = "js-arrow" href="#">
+                                <i class="fa fa-mail-forward"></i>Furnish</a>
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fas fa-table"></i>Furnish Resolution</a>
+                        </li>
+                        </ul>
+
+                        </li>
+                        <li class="has-sub">
+                            <a class = "js-arrow" href="#">
+                                <i class="fa fa-mail-forward"></i>Reports</a>
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="fas fa-table"></i>Furnish Resolution</a>
+                        </li>
+                        </ul>
+
+                        </li>
+                           
                     </ul>
                 </nav>
             </div>
@@ -416,6 +541,7 @@
     <script src="assets/js/jquery.core.js"></script>
     <script src="assets/js/jquery.app.js"></script>
     <script src="assets/js/bootbox.min.js"></script>
+    <script src="modules/growl/jquery.bootstrap-growl.js"></script>
     <script src="js/main.js"></script>
 
   

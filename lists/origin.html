@@ -40,7 +40,7 @@
 			<div class="col-md-12">
                 <div class="table-responsive table--no-card m-b-30"> 
                     
-				<table id="agency" class="table table-borderless table-striped table-earning">
+				<table id="Origin" class="table table-borderless table-striped table-earning">
                     <thead>
                     <tr>
 						<th>No.</th>
@@ -54,10 +54,10 @@
 					<tbody>
 						<tr ng-repeat="data in origins">
 							<td>{{$index+1}}</td>
-							<td>{{data.orig_name}}</td>
-							<td>{{data.shortname}}</td>
-                            <td>{{data.contact_person}}</td>
-							<td>{{data.contact_num}}</td>
+							<td>{{data.Origin_Name}}</td>
+							<td>{{data.Short_Name}}</td>
+                            <td>{{data.Contact_Person}}</td>
+							<td>{{data.Contact_No}}</td>
                             <td>
                             <button class="item" data-toggle="tootltip" data-placement="top" title data-original-title="Edit" ng-click="form.addEdit(this,data)"><i class="zmdi zmdi-edit"></i></button>
 							<button class="item" data-toggle="tooltip" data-placement="top" title data-original-title="Delete" ng-click="form.delete(this,data)"><i class="zmdi zmdi-delete"></i></button>

@@ -1,0 +1,100 @@
+  <!-- BREADCRUMB-->
+  <section class="au-breadcrumb m-t-25">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-14">
+                    <div class="au-breadcrumb-content">
+                        <div class="au-breadcrumb-left">
+                            <span class="au-breadcrumb-span">You are here:</span>
+                            <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                <li class="list-inline-item active">
+                                    <a href="index.php">Maintenance</a>
+                                </li>
+                                <li class="list-inline-item seprate">
+                                    <span>/</span>
+                                </li>
+                                <li class="list-inline-item">Origin</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- END BREADCRUMB-->
+<div class="panel panel-border panel-primary">
+    <div class="card">
+        <div class="card-header">
+		<h4><i class="fa fa-th-list m-l-5"></i> <strong> &nbsp; Add Origin</strong> 
+		<button type="submit" class="btn btn-primary float-right m-r-10" ng-click="form.edit(this)"><i class="fa" ng-class="{'fa-edit': controls.ok.btn, 'fa-ban': !controls.ok.btn}"></i></button>
+        </h4>
+    </div>
+
+    </div >
+    <div class="card-body card-block">
+
+        <div class="col-md-14 m-t-5 m-l-10">
+
+			<form name="formHolder.origin" class="form-horizontal" id="formHolder.origin" novalidate autocomplete="off">
+                    
+				<div class="form-group" ng-class="{'has-error': formHolder.origin.Origin_Name.$touched && formHolder.origin.Origin_Name.$invalid}">
+                    
+                    <div class="col-md-7 m-l-20">
+                        <label class="form-control-label">Origin Name</label>
+						<input type="text" class="form-control" name="Origin Name" ng-model="origin.Origin_Name" ng-disabled="controls.ok.btn" required>
+						<span class="help-block" ng-show="formHolder.origin.Origin_Name.$touched && formHolder.origin.Origin_Name.$invalid">This field is required</span>
+                    </div>
+                    
+                </div>
+
+			    <div class="form-group" ng-class="{'has-error': formHolder.origin.Short_Name.$touched && formHolder.origin.Short_Name.$invalid}">
+					 <div class="col-md-7 m-l-20">
+                        <label>Short Name</label>
+						<input type="text" class="form-control" name="Short_Name" ng-model="origin.Short_Name" ng-disabled="controls.ok.btn" required>
+						<span class="help-block" ng-show="formHolder.origin.Short_Name.$touched && formHolder.origin.Short_Name.$invalid">This field is required</span>
+					</div>
+                </div>
+               
+				<div class="form-group" ng-class="{'has-error': formHolder.origin.Contact_Person.$touched && formHolder.origin.Contact_Person.$invalid}">
+					 <div class="col-md-7 m-l-20">
+						<label>Contact Person</label>
+						<input type="text" class="form-control" name="Contact_Person" ng-model="origin.Contact_Person" ng-disabled="controls.ok.btn" required>
+						<span class="help-block" ng-show="formHolder.origin.Contact_Person.$touched && formHolder.origin.Contact_Person.$invalid">This field is required</span>
+					</div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error': formHolder.origin.Contact_No.$touched && formHolder.origin.Contact_No.$invalid}">
+					 <div class="col-md-7 m-l-20">
+						<label>Contact Number</label>
+                        <input type="number" class="form-control" name="Contact_No" ng-model="origin.Contact_No" ng-disabled="controls.ok.btn" required>
+						<span class="help-block" ng-show="formHolder.origin.Contact_No.$touched && formHolder.origin.Contact_No.$invalid">This field is required</span>
+                    </div>
+				</div> 
+
+
+				<!-- <div class="form-group" ng-class="{'has-error': formHolder.sp_profile.users_department.$touched && formHolder.sp_profile.users_department.$invalid}">
+					 <div class="col-md-4">
+						<label>Department</label>
+						<select class="form-control" name="users_department" ng-model="sp_profile.users_department" ng-disabled="controls.ok.btn" ng-options="data.department for data in departments track by data.id" required></select>
+						<span class="help-block" ng-show="formHolder.sp_profile.users_department.$touched && formHolder.sp_profile.users_department.$invalid">This field is required</span>
+					</div>
+				</div> -->
+
+				
+
+				
+				</form>
+		</div>
+    
+    </div>
+</div>
+	<div class="card-footer col-md-12">
+		<button type="submit" class="btn btn-primary" ng-click="form.save(this)" ng-disabled="controls.ok.btn">{{controls.ok.label}}</button>
+		<button type="submit" class="btn btn-primary" ng-click="form.list(this)" style="margin-right: 5px;">{{controls.cancel.label}}</button>
+	</div>
+	
+</div>
