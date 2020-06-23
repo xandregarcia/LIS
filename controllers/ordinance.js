@@ -1,6 +1,6 @@
-var app = angular.module('ord',['ord-module']);
+var app = angular.module('ordinance',['account-module','ordinance-module']);
 
-app.controller('ordCtrl',function($scope,form) {
+app.controller('ordinanceCtrl',function($scope,form) {
 	
 	$scope.views = {};
 	$scope.formHolder = {};
