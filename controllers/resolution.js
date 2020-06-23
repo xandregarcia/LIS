@@ -1,6 +1,6 @@
-var app = angular.module('reso',['reso-module']);
+var app = angular.module('resolution',['account-module','resolution-module']);
 
-app.controller('resoCtrl',function($scope,form) {
+app.controller('resolutionCtrl',function($scope,form) {
 	
 	$scope.views = {};
 	$scope.formHolder = {};
