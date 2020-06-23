@@ -28,7 +28,7 @@
     
 	<div class="panel-heading">
         <div class="clearfix">
-		    <h4> <i class="zmdi zmdi-account-calendar m-3"></i> Origin Data
+		    <h4> <i class="zmdi zmdi-account-calendar m-3"></i> Resolutions Data
 		    <button class="btn btn-primary float-right m-3" ng-click="form.addEdit(this)">Add</button>
             </h4>
         </div>
@@ -41,32 +41,26 @@
                 <div class="table-responsive table--no-card m-b-30"> 
                     
 				<table id="agency" class="table table-borderless table-striped table-earning">
-                    <thead>
+                  <thead>
                     <tr>
-						<th>No.</th>
-						<th>Origin Name</th>
-						<th>Shortname</th>
-						<th>Contact Person</th>
-                        <th>Contact Number</th>
-						<th>Actions</th>
+                      <th>Reso No.</th>
+                      <th>Subject Matter</th>
+                      <th>Actions</th>
                     </tr>
-                    </thead>
-					<tbody>
-						<tr ng-repeat="data in origins">
-							<td>{{$index+1}}</td>
-							<td>{{data.orig_name}}</td>
-							<td>{{data.shortname}}</td>
-                            <td>{{data.contact_person}}</td>
-							<td>{{data.contact_num}}</td>
-                            <td>
-                            <button class="item" data-toggle="tootltip" data-placement="top" title data-original-title="Edit" ng-click="form.addEdit(this,data)"><i class="zmdi zmdi-edit"></i></button>
-							<button class="item" data-toggle="tooltip" data-placement="top" title data-original-title="Delete" ng-click="form.delete(this,data)"><i class="zmdi zmdi-delete"></i></button>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="data in agencies">
+                      <td>{{data.res_no}}</td>
+                      <td>{{data.subj_matter}}</td>
+                      <td>
+                        <button class="item" data-toggle="tootltip" data-placement="top" title data-original-title="Edit" ng-click="form.addEdit(this,data)"><i class="zmdi zmdi-edit"></i></button>
+                        <button class="item" data-toggle="tooltip" data-placement="top" title data-original-title="Delete" ng-click="form.delete(this,data)"><i class="zmdi zmdi-delete"></i></button>
 							&nbsp;&nbsp;&nbsp;&nbsp;</td>
-						</tr>
-					</tbody>
+                    </tr>
+                  </tbody>
                 </table>
-                </div>
-			</div>
-		</div>
-	</div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>

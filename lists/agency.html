@@ -41,37 +41,34 @@
                 <div class="table-responsive table--no-card m-b-30"> 
                     
 				<table id="agency" class="table table-borderless table-striped table-earning">
+                  <thead>
                     <tr>
-                    <tbody>
-						<th>No.</th>
-						<th>agency_name</th>
-						<th>shortname</th>
-						<th>address</th>
-                        <th>contact_person</th>
-                        <th>contact_num</th>
-						<th>Actions</th>
-                    </tbody>
+                      <th>No.</th>
+                      <th>agency_name</th>
+                      <th>shortname</th>
+                      <th>address</th>
+                      <th>contact_person</th>
+                      <th>contact_num</th>
+                      <th>Actions</th>
                     </tr>
-					<tbody>
-						<tr ng-repeat="data in agencies">
-							<td>{{data.$index+1}}</td>
-							<td>{{data.agency_name}}</td>
-							<td>{{data.shortname}}</td>
-                            <td>{{data.address}}</td>
-                            <td>{{data.contact_person}}</td>
-							<td>{{data.contact_num}}</td>
-                            <td>
-                            <button class="item" data-toggle="tootltip" data-placement="top" title data-original-title="Edit" ng-click="form.addEdit(this,data)"><i class="zmdi zmdi-edit"></i></button>
-							<button class="item" data-toggle="tooltip" data-placement="top" title data-original-title="Delete" ng-click="form.delete(this,data)"><i class="zmdi zmdi-delete"></i></button>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="data in agencies">
+                      <td>{{$index+1}}</td>
+                      <td>{{data.agency_name}}</td>
+                      <td>{{data.shortname}}</td>
+                      <td>{{data.address}}</td>
+                      <td>{{data.contact_person}}</td>
+                      <td>{{data.contact_num}}</td>
+                      <td>
+                        <button class="item" data-toggle="tootltip" data-placement="top" title data-original-title="Edit" ng-click="form.addEdit(this,data)"><i class="zmdi zmdi-edit"></i></button>
+                        <button class="item" data-toggle="tooltip" data-placement="top" title data-original-title="Delete" ng-click="form.delete(this,data)"><i class="zmdi zmdi-delete"></i></button>
 							&nbsp;&nbsp;&nbsp;&nbsp;</td>
-						</tr>
-					</tbody>
+                    </tr>
+                  </tbody>
                 </table>
-                </div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
+              </div>
+          </div>
+      </div>
+  </div>
 </div>

@@ -41,17 +41,17 @@
                 <div class="table-responsive table--no-card m-b-30"> 
                     
 				<table id="department" class="table table-borderless table-striped table-earning">
+                    <thead>
                     <tr>
-                    <tbody>
 						<th>No.</th>
 						<th>Department Name</th>
 						<th>Shortname</th>
                         <th>Actions</th>
-                    </tbody>
                     </tr>
+                    </thead>
 					<tbody>
 						<tr ng-repeat="data in departments">
-							<td>{{data.$index+1}}</td>
+							<td>{{$index+1}}</td>
 							<td>{{data.dept_name}}</td>
 							<td>{{data.shortname}}</td>
                             <td>
@@ -65,7 +65,4 @@
 			</div>
 		</div>
 	</div>
-</div>
-
-
 </div>
