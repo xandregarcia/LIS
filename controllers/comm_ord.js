@@ -1,6 +1,6 @@
-var app = angular.module('comm_ord',['comm_ord-module']);
+var app = angular.module('commOrd',['account-module','commOrd-module']);
 
-app.controller('comm_ordCtrl',function($scope,form) {
+app.controller('commOrdCtrl',function($scope,form) {
 	
 	$scope.views = {};
 	$scope.formHolder = {};
