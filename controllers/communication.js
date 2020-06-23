@@ -1,4 +1,4 @@
-var app = angular.module('communication',['communication-module']);
+var app = angular.module('communication',['account-module','communication-module']);
 
 app.controller('communicationCtrl',function($scope,form) {
 	
